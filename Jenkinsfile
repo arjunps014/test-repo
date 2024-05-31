@@ -19,6 +19,10 @@ pipeline {
             }
             steps {
                 script {
+                    if (env.GIT_BRANCH.startsWith('refs/tags/')) {
+                        env.TAG_NAME = env.GIT_BRANCH.replaceFirst('refs/tags/', '')
+                        echo "Tag Name: ${env.TAG_NAME}"
+                    }
                     echo "TAG: ${env.GIT_BRANCH}"
                     sh 'ls -la'
                 }
