@@ -15,7 +15,7 @@ pipeline {
         }
         stage('TAG') {
             when {
-                expression { env.GIT_BRANCH =~ /refs\/tags\/v.*/ }
+                expression { env.GIT_BRANCH.startsWith('refs/tags/') }
             }
             steps {
                 script {
