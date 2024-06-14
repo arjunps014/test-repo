@@ -9,5 +9,6 @@ def hello_world():
     return 'Hello, World!'
 
 # Run the Flask application if this script is executed directly
+# Entrypoint
 if __name__ == '__main__':
     app.run(debug=True)
