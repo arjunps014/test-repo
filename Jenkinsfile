@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    enviornment {
+    environment {
         GIT_REPO_URL = "https://github.com/arjunps014/test-repo.git"
         GIT_CHECKOUT_TAG = "refs/tags/v5.0.0"
     }
