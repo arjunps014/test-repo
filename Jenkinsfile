@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    options {
+        skipDefaultCheckout true
+    }
+
     environment {
         GIT_REPO_URL = "https://github.com/arjunps014/test-repo.git"
         GIT_CHECKOUT_TAG = "refs/tags/v5.0.0"
@@ -33,6 +37,14 @@ pipeline {
                         ]
                     ]
                 ])
+            }
+        }
+        stage('List') {
+            steps {
+                script {
+                    echo "ENV_BRANCH: ${env.GIT_BRANCH}"
+                    sh 'ls -la'
+                }
             }
         }
         stage('BRANCH') {
