@@ -43,6 +43,7 @@ pipeline {
             steps {
                 script {
                     echo "ENV_BRANCH: ${env.GIT_BRANCH}"
+                    echo "TAG: ${GIT_CHECKOUT_TAG}"
                     sh 'ls -la'
                 }
             }
